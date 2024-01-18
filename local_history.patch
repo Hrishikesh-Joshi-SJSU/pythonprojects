@@ -1,0 +1,223 @@
+Index: awards_project_template_for_hrishikesh_joshi.ipynb
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/awards_project_template_for_hrishikesh_joshi.ipynb b/awards_project_template_for_hrishikesh_joshi.ipynb
+--- a/awards_project_template_for_hrishikesh_joshi.ipynb	
++++ b/awards_project_template_for_hrishikesh_joshi.ipynb	(date 1693767090149)
+@@ -287,7 +287,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 9,
++   "execution_count": 11,
+    "metadata": {
+     "collapsed": true,
+     "jupyter": {
+@@ -389,49 +389,50 @@
+     "# 5 = roster\n",
+     "# 6 = out of league\n",
+     "\n",
+-    "players_2010 = player_data.loc[player_data['draftyear']==2010, 'nbapersonid'].unique()\n",
+-    "#player_ids = player_data['nbapersonid'].unique()\n",
+-    "player_classified_years = {}\n",
+-    "for id in players_2010:\n",
+-    "    player_seasons = player_data.loc[player_data['nbapersonid']==id, 'season']\n",
+-    "    player_classified_years[id] = []\n",
+-    "    for season in player_seasons:\n",
+-    "        player_awards = awards.loc[(awards['nbapersonid']==id) & (awards['season']==season)]\n",
+-    "        player_elite = player_awards.loc[(player_awards['All NBA First Team']==1.0)| (player_awards['All NBA Second Team']==1.0)|(player_awards['All NBA Third Team']==1.0)|(player_awards['Most Valuable Player_rk']==1.0)|(player_awards['Defensive Player Of The Year_rk']==1.0)]\n",
+-    "        if player_elite.size != 0:\n",
+-    "            player_classified_years[id].append(1)\n",
+-    "        else:\n",
+-    "            player_allnba = player_awards.loc[(player_awards['all_star_game']==True)]\n",
+-    "            if player_allnba.size != 0:\n",
+-    "                player_classified_years[id].append(2)\n",
+-    "            else:\n",
+-    "                player_starter = player_seasons.loc[(player_data['mins']>=2000)|(player_data['games_start']>=41)]\n",
+-    "                player_starter_2019_2020 = player_seasons.loc[(player_data['mins']>=1756)|(player_data['games_start']>=36)]\n",
+-    "                player_starter_2011 = player_seasons.loc[(player_data['mins']>=1610)|(player_data['games_start']>=33)]\n",
+-    "                if player_starter.size != 0:\n",
+-    "                    player_classified_years[id].append(3)\n",
+-    "                elif player_starter_2019_2020.size != 0 and (season==2019 or season==2020):\n",
+-    "                    player_classified_years[id].append(3)\n",
+-    "                elif player_starter_2011.size != 0 and season==2011:\n",
+-    "                    player_classified_years[id].append(3)\n",
+-    "                else:\n",
+-    "                    player_rotation = player_data.loc[player_data['mins']>=1000]\n",
+-    "                    player_rotation_2019_2020 = player_data.loc[player_data['mins']>=878]\n",
+-    "                    player_rotation_2011 = player_data.loc[player_data['mins']>=805]\n",
+-    "                    if player_rotation.size != 0:\n",
+-    "                        player_classified_years[id].append(4)\n",
+-    "                    elif player_rotation_2019_2020.size != 0 and (season==2019 and season==2020):\n",
+-    "                        player_classified_years[id].append(4)\n",
+-    "                    elif player_rotation_2011 != 0 and season==2011:\n",
+-    "                         player_classified_years[id].append(4)\n",
+-    "                    else:\n",
+-    "                        player_roster = player_data.loc[player_data['mins']>=1]\n",
+-    "                        if player_roster.size != 0:\n",
+-    "                            player_classified_years[id].append(5)\n",
+-    "                        else:\n",
+-    "                            player_classified_years[id].append(6)\n",
++    "\n",
++    "\n",
++    "\n",
++    "def clean_data(players_year, player_classified_years):\n",
++    "    for id in players_year:\n",
++    "        player_seasons = player_data.loc[player_data['nbapersonid']==id, 'season']\n",
++    "        player_classified_years[id] = []\n",
++    "        for season in player_seasons:\n",
++    "            player_awards = awards.loc[(awards['nbapersonid']==id) & (awards['season']==season)]\n",
++    "            player_elite = player_awards.loc[(player_awards['All NBA First Team']==1.0)| (player_awards['All NBA Second Team']==1.0)|(player_awards['All NBA Third Team']==1.0)|(player_awards['Most Valuable Player_rk']==1.0)|(player_awards['Defensive Player Of The Year_rk']==1.0)]\n",
++    "            if player_elite.size != 0:\n",
++    "                player_classified_years[id].append(1)\n",
++    "            else:\n",
++    "                player_allnba = player_awards.loc[(player_awards['all_star_game']==True)]\n",
++    "                if player_allnba.size != 0:\n",
++    "                    player_classified_years[id].append(2)\n",
++    "                else:\n",
++    "                    player_starter = player_seasons.loc[(player_data['mins']>=2000)|(player_data['games_start']>=41)]\n",
++    "                    player_starter_2019_2020 = player_seasons.loc[(player_data['mins']>=1756)|(player_data['games_start']>=36)]\n",
++    "                    player_starter_2011 = player_seasons.loc[(player_data['mins']>=1610)|(player_data['games_start']>=33)]\n",
++    "                    if player_starter.size != 0:\n",
++    "                        player_classified_years[id].append(3)\n",
++    "                    elif player_starter_2019_2020.size != 0 and (season==2019 or season==2020):\n",
++    "                        player_classified_years[id].append(3)\n",
++    "                    elif player_starter_2011.size != 0 and season==2011:\n",
++    "                        player_classified_years[id].append(3)\n",
++    "                    else:\n",
++    "                        player_rotation = player_data.loc[player_data['mins']>=1000]\n",
++    "                        player_rotation_2019_2020 = player_data.loc[player_data['mins']>=878]\n",
++    "                        player_rotation_2011 = player_data.loc[player_data['mins']>=805]\n",
++    "                        if player_rotation.size != 0:\n",
++    "                            player_classified_years[id].append(4)\n",
++    "                        elif player_rotation_2019_2020.size != 0 and (season==2019 and season==2020):\n",
++    "                            player_classified_years[id].append(4)\n",
++    "                        elif player_rotation_2011 != 0 and season==2011:\n",
++    "                             player_classified_years[id].append(4)\n",
++    "                        else:\n",
++    "                            player_roster = player_data.loc[player_data['mins']>=1]\n",
++    "                            if player_roster.size != 0:\n",
++    "                                player_classified_years[id].append(5)\n",
++    "                            else:\n",
++    "                                player_classified_years[id].append(6)\n",
+     "\n",
+-    "def classify(player, dict_of_year):\n",
++    "def classify(player, dict_of_year, player_classified_years):\n",
+     "    x = player_classified_years[player]\n",
+     "    if len(x) < 6:\n",
+     "        dict_of_year[player] = 6\n",
+@@ -442,13 +443,12 @@
+     "            min_sum = min(current_sum, min_sum)\n",
+     "        dict_of_year[player] = min_sum//2\n",
+     "\n",
+-    "\n",
+-    "\n",
+-    "\n",
++    "players_2010 = player_data.loc[player_data['draftyear']==2010, 'nbapersonid'].unique()\n",
++    "classified_years = {}\n",
++    "clean_data(players_2010, classified_years)\n",
+     "dict_of_2010  = {}\n",
+-    "for id in players_2010:\n",
+-    "    classify(id, dict_of_2010)\n",
+-    "    print(dict_of_2010[id])\n",
++    "for player_id in players_2010:\n",
++    "    classify(player_id, dict_of_2010, classified_years)\n",
+     "num_elite = len({player for player in dict_of_2010 if dict_of_2010[player]==1})\n",
+     "num_allstar = len({player for player in dict_of_2010 if dict_of_2010[player]==2})\n",
+     "num_starter = len({player for player in dict_of_2010 if dict_of_2010[player]==3})\n",
+@@ -513,38 +513,24 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": 23,
++   "execution_count": null,
++   "outputs": [],
++   "source": [],
++   "metadata": {
++    "collapsed": false
++   }
++  },
++  {
++   "cell_type": "code",
++   "execution_count": 5,
+    "metadata": {
+     "collapsed": true,
+     "jupyter": {
+      "outputs_hidden": true
+     }
+    },
+-   "outputs": [
+-    {
+-     "name": "stdout",
+-     "output_type": "stream",
+-     "text": [
+-      "Chances of an elite career: 0.1125\n",
+-      "Chances of an all-star career: 0.096875\n",
+-      "Chances of an starter career: 0.759375\n",
+-      "Chances of an rotation career: 0.025\n",
+-      "Chances of an roster career: 0.0\n",
+-      "Chances of an out-of-league career: 0.00625\n"
+-     ]
+-    },
+-    {
+-     "data": {
+-      "text/plain": "\"num_elite = len({player for player in dict_of_2010 if dict_of_2010[player]==1})\\nnum_allstar = len({player for player in dict_of_2010 if dict_of_2010[player]==2})\\nnum_starter = len({player for player in dict_of_2010 if dict_of_2010[player]==3})\\nnum_rotation = len({player for player in dict_of_2010 if dict_of_2010[player]==4})\\nnum_roster = len({player for player in dict_of_2010 if dict_of_2010[player]==5})\\nnum_out_of_league = len({player for player in dict_of_2010 if dict_of_2010[player]==6})\\nprint('Elite:', num_elite,'players')\\nprint('All Star:',num_allstar,'player')\\nprint('Starter:', num_starter,'players')\\nprint('Rotation:', num_rotation,'players')\\nprint('Roster:', num_roster,'players')\\nprint('Out of League:', num_out_of_league,'players')\""
+-     },
+-     "execution_count": 23,
+-     "metadata": {},
+-     "output_type": "execute_result"
+-    }
+-   ],
+-   "source": [
+-    "# Note: Here as well as anywhere else, feel free to add as many code chunks as you'd like."
+-   ]
++   "outputs": [],
++   "source": []
+   },
+   {
+    "cell_type": "markdown",
+@@ -563,14 +549,22 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 6,
+    "metadata": {
+     "collapsed": true,
+     "jupyter": {
+      "outputs_hidden": true
+     }
+    },
+-   "outputs": [],
++   "outputs": [
++    {
++     "name": "stdout",
++     "output_type": "stream",
++     "text": [
++      "28.9 %\n"
++     ]
++    }
++   ],
+    "source": [
+     "x= rebounding_data.loc[(rebounding_data['team']=='OKC') & (rebounding_data['game_number']<81), ['offensive_rebounds', 'off_rebound_chances']].sum()\n",
+     "predicted_percentage = (x.loc['offensive_rebounds']/x.loc['off_rebound_chances'])*100\n",
+@@ -615,7 +609,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 6,
+    "outputs": [],
+    "source": [],
+    "metadata": {
+@@ -634,7 +628,7 @@
+   },
+   {
+    "cell_type": "code",
+-   "execution_count": null,
++   "execution_count": 6,
+    "outputs": [],
+    "source": [],
+    "metadata": {

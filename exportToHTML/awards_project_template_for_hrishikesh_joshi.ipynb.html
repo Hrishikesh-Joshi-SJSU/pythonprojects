@@ -1,0 +1,447 @@
+<html>
+<head>
+<title>awards_project_template_for_hrishikesh_joshi.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+.ln { color: #606366; font-weight: normal; font-style: normal; }
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+awards_project_template_for_hrishikesh_joshi.ipynb</font>
+</center></td></tr></table>
+<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">#%% md 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s1"># Name: Hrishikesh Joshi     
+<a name="l3"><span class="ln">3    </span></a>### Date: 27 August 2023 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">#%% md 
+<a name="l5"><span class="ln">5    </span></a></span>
+<a name="l6"><span class="ln">6    </span></a><span class="s0">#%% md 
+<a name="l7"><span class="ln">7    </span></a></span>
+<a name="l8"><span class="ln">8    </span></a><span class="s0">#%% md 
+<a name="l9"><span class="ln">9    </span></a></span><span class="s1"># Introduction   
+<a name="l10"><span class="ln">10   </span></a> 
+<a name="l11"><span class="ln">11   </span></a>The purpose of this project is to gauge your technical skills and problem solving ability by working through something similar to a real NBA data science project. You will work your way through this jupyter notebook, answering questions as you go along. Please begin by adding your name to the top markdown chunk in this document. When you're finished with the document, come back and type your answers into the answer key at the top. Please leave all your work below and have your answers where indicated below as well. Please note that we will be reviewing your code so make it clear, concise and avoid long printouts. Feel free to add in as many new code chunks as you'd like. 
+<a name="l12"><span class="ln">12   </span></a> 
+<a name="l13"><span class="ln">13   </span></a>Remember that we will be grading the quality of your code and visuals alongside the correctness of your answers. Please try to use packages like pandas/numpy and matplotlib/seaborn as much as possible (instead of base python data manipulations and explicit loops.)   
+<a name="l14"><span class="ln">14   </span></a> 
+<a name="l15"><span class="ln">15   </span></a>**WARNING:** Your project will **ONLY** be graded if it's knit to an HTML document where we can see your code. Be careful to make sure that any long lines of code appropriately visibly wrap around visibly to the next line, as code that's cut off from the side of the document cannot be graded.   
+<a name="l16"><span class="ln">16   </span></a> 
+<a name="l17"><span class="ln">17   </span></a>**Note:**     
+<a name="l18"><span class="ln">18   </span></a> 
+<a name="l19"><span class="ln">19   </span></a>**Throughout this document, any `season` column represents the year each season started. For example, the 2015-16 season will be in the dataset as 2015. For most of the rest of the project, we will refer to a season by just this number (e.g. 2015) instead of the full text (e.g. 2015-16).**  
+<a name="l20"><span class="ln">20   </span></a></span><span class="s0">#%% md 
+<a name="l21"><span class="ln">21   </span></a></span><span class="s1"># Answers   
+<a name="l22"><span class="ln">22   </span></a> 
+<a name="l23"><span class="ln">23   </span></a>## Part 1       
+<a name="l24"><span class="ln">24   </span></a> 
+<a name="l25"><span class="ln">25   </span></a>**Question 1:**    
+<a name="l26"><span class="ln">26   </span></a> 
+<a name="l27"><span class="ln">27   </span></a>- 1st Team: 20.1 points per game 
+<a name="l28"><span class="ln">28   </span></a>- 2nd Team: 19.3 points per game 
+<a name="l29"><span class="ln">29   </span></a>- 3rd Team: 17.6 points per game 
+<a name="l30"><span class="ln">30   </span></a>- All-Star: 17.0 points per game 
+<a name="l31"><span class="ln">31   </span></a> 
+<a name="l32"><span class="ln">32   </span></a>**Question 2:** 3.7 Years 
+<a name="l33"><span class="ln">33   </span></a> 
+<a name="l34"><span class="ln">34   </span></a>**Question 3:**  
+<a name="l35"><span class="ln">35   </span></a> 
+<a name="l36"><span class="ln">36   </span></a>- Elite: 3 players. 
+<a name="l37"><span class="ln">37   </span></a>- All-Star: 1 players. 
+<a name="l38"><span class="ln">38   </span></a>- Starter: 19 players. 
+<a name="l39"><span class="ln">39   </span></a>- Rotation: 9 players. 
+<a name="l40"><span class="ln">40   </span></a>- Roster: 0 players. 
+<a name="l41"><span class="ln">41   </span></a>- Out of League: 41 players. 
+<a name="l42"><span class="ln">42   </span></a> 
+<a name="l43"><span class="ln">43   </span></a>**Open Ended Modeling Question:** Please show your work and leave all responses below in the document. 
+<a name="l44"><span class="ln">44   </span></a> 
+<a name="l45"><span class="ln">45   </span></a> 
+<a name="l46"><span class="ln">46   </span></a>## Part 2   
+<a name="l47"><span class="ln">47   </span></a> 
+<a name="l48"><span class="ln">48   </span></a>**Question 1:** 28.9 % 
+<a name="l49"><span class="ln">49   </span></a>**Question 2:** Written question, put answer below in the document.     
+<a name="l50"><span class="ln">50   </span></a>**Question 3:** Written question, put answer below in the document.     
+<a name="l51"><span class="ln">51   </span></a>   
+<a name="l52"><span class="ln">52   </span></a> 
+<a name="l53"><span class="ln">53   </span></a></span><span class="s0">#%% md 
+<a name="l54"><span class="ln">54   </span></a></span><span class="s1"># Setup and Data     
+<a name="l55"><span class="ln">55   </span></a></span><span class="s0">#%% 
+<a name="l56"><span class="ln">56   </span></a></span><span class="s2">import </span><span class="s1">pandas </span><span class="s2">as </span><span class="s1">pd</span>
+<a name="l57"><span class="ln">57   </span></a><span class="s2">import </span><span class="s1">matplotlib.pyplot </span><span class="s2">as </span><span class="s1">plt</span>
+<a name="l58"><span class="ln">58   </span></a><span class="s0"># Note you will likely have to change these paths. </span>
+<a name="l59"><span class="ln">59   </span></a><span class="s0"># If your data is in the same folder as this project, </span>
+<a name="l60"><span class="ln">60   </span></a><span class="s0"># the paths will likely be fixed for you by deleting ../../Data/awards_project/ from each string.</span>
+<a name="l61"><span class="ln">61   </span></a><span class="s1">awards = pd.read_csv(</span><span class="s3">&quot;awards_data.csv&quot;</span><span class="s1">)</span>
+<a name="l62"><span class="ln">62   </span></a><span class="s1">player_data = pd.read_csv(</span><span class="s3">&quot;player_stats.csv&quot;</span><span class="s1">)</span>
+<a name="l63"><span class="ln">63   </span></a><span class="s1">team_data = pd.read_csv(</span><span class="s3">&quot;team_stats.csv&quot;</span><span class="s1">)</span>
+<a name="l64"><span class="ln">64   </span></a><span class="s1">rebounding_data = pd.read_csv(</span><span class="s3">&quot;team_rebounding_data_22.csv&quot;</span><span class="s1">)</span>
+<a name="l65"><span class="ln">65   </span></a><span class="s0">#%% md 
+<a name="l66"><span class="ln">66   </span></a></span><span class="s1">## Part 1 -- Awards   
+<a name="l67"><span class="ln">67   </span></a> 
+<a name="l68"><span class="ln">68   </span></a>In this section, you're going to work with data relating to player awards and statistics. You'll start with some data manipulation questions and work towards building a model to predict broad levels of career success.   
+<a name="l69"><span class="ln">69   </span></a> 
+<a name="l70"><span class="ln">70   </span></a></span><span class="s0">#%% md 
+<a name="l71"><span class="ln">71   </span></a></span><span class="s1">### Question 1   
+<a name="l72"><span class="ln">72   </span></a> 
+<a name="l73"><span class="ln">73   </span></a>**QUESTION:** What is the average number of points per game for players in the 2007-2021 seasons who won All NBA First, Second, and Third teams (**not** the All Defensive Teams), as well as for players who were in the All-Star Game (**not** the rookie all-star game)? 
+<a name="l74"><span class="ln">74   </span></a> 
+<a name="l75"><span class="ln">75   </span></a> 
+<a name="l76"><span class="ln">76   </span></a>  
+<a name="l77"><span class="ln">77   </span></a></span><span class="s0">#%% 
+<a name="l78"><span class="ln">78   </span></a># p1, p2, etc store ids of all players winning that respective honor</span>
+<a name="l79"><span class="ln">79   </span></a><span class="s1">p1 = awards.loc[awards[</span><span class="s3">'All NBA First Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l80"><span class="ln">80   </span></a><span class="s1">p2 = awards.loc[awards[</span><span class="s3">'All NBA Second Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l81"><span class="ln">81   </span></a><span class="s1">p3 = awards.loc[awards[</span><span class="s3">'All NBA Third Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l82"><span class="ln">82   </span></a><span class="s1">pallstar = awards.loc[awards[</span><span class="s3">'all_star_game'</span><span class="s1">]==</span><span class="s2">True, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l83"><span class="ln">83   </span></a>
+<a name="l84"><span class="ln">84   </span></a><span class="s1">first_team_points = </span><span class="s4">0</span>
+<a name="l85"><span class="ln">85   </span></a><span class="s1">first_team_games = </span><span class="s4">0</span>
+<a name="l86"><span class="ln">86   </span></a><span class="s1">second_team_points = </span><span class="s4">0</span>
+<a name="l87"><span class="ln">87   </span></a><span class="s1">second_team_games = </span><span class="s4">0</span>
+<a name="l88"><span class="ln">88   </span></a><span class="s1">third_team_points = </span><span class="s4">0</span>
+<a name="l89"><span class="ln">89   </span></a><span class="s1">third_team_games = </span><span class="s4">0</span>
+<a name="l90"><span class="ln">90   </span></a><span class="s1">allstar_points = </span><span class="s4">0</span>
+<a name="l91"><span class="ln">91   </span></a><span class="s1">allstar_games = </span><span class="s4">0</span>
+<a name="l92"><span class="ln">92   </span></a>
+<a name="l93"><span class="ln">93   </span></a><span class="s0"># # of points and # of games calculated for players in each category</span>
+<a name="l94"><span class="ln">94   </span></a><span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">p1:</span>
+<a name="l95"><span class="ln">95   </span></a>    <span class="s1">first_team_points += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'points'</span><span class="s1">].sum()</span>
+<a name="l96"><span class="ln">96   </span></a>    <span class="s1">first_team_games += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'games'</span><span class="s1">].sum()</span>
+<a name="l97"><span class="ln">97   </span></a><span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">p2:</span>
+<a name="l98"><span class="ln">98   </span></a>    <span class="s1">second_team_points += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'points'</span><span class="s1">].sum()</span>
+<a name="l99"><span class="ln">99   </span></a>    <span class="s1">second_team_games += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'games'</span><span class="s1">].sum()</span>
+<a name="l100"><span class="ln">100  </span></a><span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">p3:</span>
+<a name="l101"><span class="ln">101  </span></a>    <span class="s1">third_team_points += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'points'</span><span class="s1">].sum()</span>
+<a name="l102"><span class="ln">102  </span></a>    <span class="s1">third_team_games += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'games'</span><span class="s1">].sum()</span>
+<a name="l103"><span class="ln">103  </span></a><span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">pallstar:</span>
+<a name="l104"><span class="ln">104  </span></a>    <span class="s1">allstar_points += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'points'</span><span class="s1">].sum()</span>
+<a name="l105"><span class="ln">105  </span></a>    <span class="s1">allstar_games += player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'games'</span><span class="s1">].sum()</span>
+<a name="l106"><span class="ln">106  </span></a>
+<a name="l107"><span class="ln">107  </span></a><span class="s0"># average points per game calculated and printed</span>
+<a name="l108"><span class="ln">108  </span></a><span class="s1">print(</span><span class="s3">'1st Team: '</span><span class="s2">, </span><span class="s1">round(first_team_points/first_team_games</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">, </span><span class="s3">' points per game'</span><span class="s1">)</span>
+<a name="l109"><span class="ln">109  </span></a><span class="s1">print(</span><span class="s3">'2nd Team: '</span><span class="s2">, </span><span class="s1">round(second_team_points/second_team_games</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">, </span><span class="s3">' points per game'</span><span class="s1">)</span>
+<a name="l110"><span class="ln">110  </span></a><span class="s1">print(</span><span class="s3">'3rd Team: '</span><span class="s2">, </span><span class="s1">round(third_team_points/third_team_games</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">, </span><span class="s3">' points per game'</span><span class="s1">)</span>
+<a name="l111"><span class="ln">111  </span></a><span class="s1">print(</span><span class="s3">'All-Star: '</span><span class="s2">, </span><span class="s1">round(allstar_points/allstar_games</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">, </span><span class="s3">' points per game'</span><span class="s1">)</span>
+<a name="l112"><span class="ln">112  </span></a>
+<a name="l113"><span class="ln">113  </span></a><span class="s0">#%% md 
+<a name="l114"><span class="ln">114  </span></a></span><span class="s1">&lt;strong&gt;&lt;span style=&quot;color:red&quot;&gt;ANSWER 1:&lt;/span&gt;&lt;/strong&gt;    
+<a name="l115"><span class="ln">115  </span></a> 
+<a name="l116"><span class="ln">116  </span></a>1st Team: XX.X points per game   
+<a name="l117"><span class="ln">117  </span></a>2nd Team: XX.X points per game   
+<a name="l118"><span class="ln">118  </span></a>3rd Team: XX.X points per game   
+<a name="l119"><span class="ln">119  </span></a>All-Star: XX.X points per game   
+<a name="l120"><span class="ln">120  </span></a></span><span class="s0">#%% md 
+<a name="l121"><span class="ln">121  </span></a></span><span class="s1">### Question 2   
+<a name="l122"><span class="ln">122  </span></a> 
+<a name="l123"><span class="ln">123  </span></a>**QUESTION:** What was the average number of years of experience in the league it takes for players to make their first All NBA Selection (1st, 2nd, or 3rd team)? Please limit your sample to players drafted in 2007 or later who did eventually go on to win at least one All NBA selection. For example: 
+<a name="l124"><span class="ln">124  </span></a> 
+<a name="l125"><span class="ln">125  </span></a>- Luka Doncic is in the dataset as 2 years. He was drafted in 2018 and won his first All NBA award in 2019 (which was his second season).   
+<a name="l126"><span class="ln">126  </span></a>- LeBron James is not in this dataset, as he was drafted prior to 2007.   
+<a name="l127"><span class="ln">127  </span></a>- Lu Dort is not in this dataset, as he has not received any All NBA honors.   
+<a name="l128"><span class="ln">128  </span></a> 
+<a name="l129"><span class="ln">129  </span></a> 
+<a name="l130"><span class="ln">130  </span></a></span><span class="s0">#%% 
+<a name="l131"><span class="ln">131  </span></a># player ids of players who won any award discovered</span>
+<a name="l132"><span class="ln">132  </span></a><span class="s1">awarded_player_ids = awards.loc[(awards[</span><span class="s3">'All NBA First Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)|(awards[</span><span class="s3">'All NBA Second Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)|(awards[</span><span class="s3">'All NBA Third Team'</span><span class="s1">])</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l133"><span class="ln">133  </span></a><span class="s1">sum = </span><span class="s4">0</span>
+<a name="l134"><span class="ln">134  </span></a><span class="s1">count = </span><span class="s4">0</span>
+<a name="l135"><span class="ln">135  </span></a><span class="s0"># loop through all the awarded players and calculate their average 'age' their first year winning an award</span>
+<a name="l136"><span class="ln">136  </span></a><span class="s0"># if they were drafted after 2007</span>
+<a name="l137"><span class="ln">137  </span></a><span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">awarded_player_ids:</span>
+<a name="l138"><span class="ln">138  </span></a>    <span class="s1">draft_year = player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'draftyear'</span><span class="s1">].unique()</span>
+<a name="l139"><span class="ln">139  </span></a>    <span class="s2">if </span><span class="s1">draft_year[</span><span class="s4">0</span><span class="s1">]&gt;=</span><span class="s4">2007</span><span class="s1">:</span>
+<a name="l140"><span class="ln">140  </span></a>        <span class="s1">earliest_awarded_year = awards.loc[(awards[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id) &amp; ((awards[</span><span class="s3">'All NBA First Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)| (awards[</span><span class="s3">'All NBA Second Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)|(awards[</span><span class="s3">'All NBA Third Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">))</span><span class="s2">, </span><span class="s3">'season'</span><span class="s1">].min()</span>
+<a name="l141"><span class="ln">141  </span></a>        <span class="s1">num_years_first_award = earliest_awarded_year-draft_year[</span><span class="s4">0</span><span class="s1">]</span>
+<a name="l142"><span class="ln">142  </span></a>        <span class="s1">sum += num_years_first_award</span>
+<a name="l143"><span class="ln">143  </span></a>        <span class="s1">count+=</span><span class="s4">1</span>
+<a name="l144"><span class="ln">144  </span></a><span class="s1">print(round(sum/count</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">, </span><span class="s3">'Years'</span><span class="s1">)</span>
+<a name="l145"><span class="ln">145  </span></a><span class="s0"># average 'age' is calculated and printed out</span>
+<a name="l146"><span class="ln">146  </span></a><span class="s0">#print(round(average_age, 1), ' Years')</span>
+<a name="l147"><span class="ln">147  </span></a><span class="s0">#%% md 
+<a name="l148"><span class="ln">148  </span></a></span><span class="s1">&lt;strong&gt;&lt;span style=&quot;color:red&quot;&gt;ANSWER 2:&lt;/span&gt;&lt;/strong&gt;   
+<a name="l149"><span class="ln">149  </span></a> 
+<a name="l150"><span class="ln">150  </span></a>XX.X Years   
+<a name="l151"><span class="ln">151  </span></a></span><span class="s0">#%% md 
+<a name="l152"><span class="ln">152  </span></a></span><span class="s1">## Data Cleaning Interlude   
+<a name="l153"><span class="ln">153  </span></a> 
+<a name="l154"><span class="ln">154  </span></a>You're going to work to create a dataset with a &quot;career outcome&quot; for each player, representing the highest level of success that the player achieved for **at least two** seasons *after his first four seasons in the league* (examples to follow below!). To do this, you'll start with single season level outcomes. On a single season level, the outcomes are:   
+<a name="l155"><span class="ln">155  </span></a> 
+<a name="l156"><span class="ln">156  </span></a>- Elite: A player is &quot;Elite&quot; in a season if he won any All NBA award (1st, 2nd, or 3rd team), MVP, or DPOY in that season.     
+<a name="l157"><span class="ln">157  </span></a>- All-Star: A player is &quot;All-Star&quot; in a season if he was selected to be an All-Star that season.    
+<a name="l158"><span class="ln">158  </span></a>- Starter:  A player is a &quot;Starter&quot; in a season if he started in at least 41 games in the season OR if he played at least 2000 minutes in the season.     
+<a name="l159"><span class="ln">159  </span></a>- Rotation:  A player is a &quot;Rotation&quot; player in a season if he played at least 1000 minutes in the season.    
+<a name="l160"><span class="ln">160  </span></a>- Roster:  A player is a &quot;Roster&quot; player in a season if he played at least 1 minute for an NBA team but did not meet any of the above criteria.      
+<a name="l161"><span class="ln">161  </span></a>- Out of the League: A player is &quot;Out of the League&quot; if he is not in the NBA in that season.    
+<a name="l162"><span class="ln">162  </span></a> 
+<a name="l163"><span class="ln">163  </span></a>We need to make an adjustment for determining Starter/Rotation qualifications for a few seasons that didn't have 82 games per team. Assume that there were 66 possible games in the 2011 lockout season and 72 possible games in each of the 2019 and 2020 seasons that were shortened due to covid. Specifically, if a player played 900 minutes in 2011, he **would** meet the rotation criteria because his final minutes would be considered to be 900 * (82/66) = 1118. Please use this math for both minutes and games started, so a player who started 38 games in 2019 or 2020 would be considered to have started 38 * (82/72) = 43 games, and thus would qualify for starting 41. Any answers should be calculated assuming you round the multiplied values to the nearest whole number. 
+<a name="l164"><span class="ln">164  </span></a> 
+<a name="l165"><span class="ln">165  </span></a>Note that on a season level, a player's outcome is the highest level of success he qualifies for in that season. Thus, since Shai Gilgeous-Alexander was both All-NBA 1st team and an All-Star last year, he would be considered to be &quot;Elite&quot; for the 2022 season, but would still qualify for a career outcome of All-Star if in the rest of his career he made one more All-Star game but no more All-NBA teams. Note this is a hypothetical, and Shai has not yet played enough to have a career outcome.     
+<a name="l166"><span class="ln">166  </span></a> 
+<a name="l167"><span class="ln">167  </span></a>Examples:   
+<a name="l168"><span class="ln">168  </span></a> 
+<a name="l169"><span class="ln">169  </span></a>- A player who enters the league as a rookie and has season outcomes of Roster (1), Rotation (2), Rotation (3), Roster (4), Roster (5), Out of the League (6+) would be considered &quot;Out of the League,&quot; because after his first four seasons, he only has a single Roster year, which does not qualify him for any success outcome.   
+<a name="l170"><span class="ln">170  </span></a>- A player who enters the league as a rookie and has season outcomes of Roster (1), Rotation (2), Starter (3), Starter (4), Starter (5), Starter (6), All-Star (7), Elite (8), Starter (9) would be considered &quot;All-Star,&quot; because he had at least two seasons after his first four at all-star level of production or higher.   
+<a name="l171"><span class="ln">171  </span></a>- A player who enters the league as a rookie and has season outcomes of Roster (1), Rotation (2), Starter (3), Starter (4), Starter (5), Starter (6), Rotation (7), Rotation (8), Roster (9) would be considered a &quot;Starter&quot; because he has two seasons after his first four at a starter level of production.  
+<a name="l172"><span class="ln">172  </span></a> 
+<a name="l173"><span class="ln">173  </span></a></span><span class="s0">#%% md 
+<a name="l174"><span class="ln">174  </span></a></span><span class="s1">### Question 3   
+<a name="l175"><span class="ln">175  </span></a> 
+<a name="l176"><span class="ln">176  </span></a>**QUESTION:** There are 73 players in the `player_data` dataset who have 2010 listed as their draft year. How many of those players have a **career** outcome in each of the 6 buckets?   
+<a name="l177"><span class="ln">177  </span></a></span><span class="s0">#%% 
+<a name="l178"><span class="ln">178  </span></a># 1 = elite</span>
+<a name="l179"><span class="ln">179  </span></a><span class="s0"># 2 = all star</span>
+<a name="l180"><span class="ln">180  </span></a><span class="s0"># 3 = starter</span>
+<a name="l181"><span class="ln">181  </span></a><span class="s0"># 4 = rotation</span>
+<a name="l182"><span class="ln">182  </span></a><span class="s0"># 5 = roster</span>
+<a name="l183"><span class="ln">183  </span></a><span class="s0"># 6 = out of league</span>
+<a name="l184"><span class="ln">184  </span></a><span class="s0"># 11 = &lt;=1.49</span>
+<a name="l185"><span class="ln">185  </span></a><span class="s0"># 22 = &lt;=2</span>
+<a name="l186"><span class="ln">186  </span></a><span class="s0"># 33 = &lt;=2.49</span>
+<a name="l187"><span class="ln">187  </span></a><span class="s0"># 44 = &lt;=3</span>
+<a name="l188"><span class="ln">188  </span></a><span class="s0"># 55 = &lt;=3.49</span>
+<a name="l189"><span class="ln">189  </span></a><span class="s0"># 66 = &gt;=3.5</span>
+<a name="l190"><span class="ln">190  </span></a>
+<a name="l191"><span class="ln">191  </span></a><span class="s2">def </span><span class="s1">clean_data(players_year</span><span class="s2">, </span><span class="s1">player_classified_years):</span>
+<a name="l192"><span class="ln">192  </span></a>    <span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">players_year:</span>
+<a name="l193"><span class="ln">193  </span></a>        <span class="s1">player_seasons = player_data.loc[player_data[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id</span><span class="s2">, </span><span class="s3">'season'</span><span class="s1">]</span>
+<a name="l194"><span class="ln">194  </span></a>        <span class="s1">player_classified_years[id] = []</span>
+<a name="l195"><span class="ln">195  </span></a>        <span class="s2">for </span><span class="s1">season </span><span class="s2">in </span><span class="s1">player_seasons:</span>
+<a name="l196"><span class="ln">196  </span></a>            <span class="s1">player_awards = awards.loc[(awards[</span><span class="s3">'nbapersonid'</span><span class="s1">]==id) &amp; (awards[</span><span class="s3">'season'</span><span class="s1">]==season)]</span>
+<a name="l197"><span class="ln">197  </span></a>            <span class="s1">player_elite = player_awards.loc[(player_awards[</span><span class="s3">'All NBA First Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)| (player_awards[</span><span class="s3">'All NBA Second Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)|(player_awards[</span><span class="s3">'All NBA Third Team'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)|(player_awards[</span><span class="s3">'Most Valuable Player_rk'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)|(player_awards[</span><span class="s3">'Defensive Player Of The Year_rk'</span><span class="s1">]==</span><span class="s4">1.0</span><span class="s1">)]</span>
+<a name="l198"><span class="ln">198  </span></a>            <span class="s2">if </span><span class="s1">player_elite.size != </span><span class="s4">0</span><span class="s1">:</span>
+<a name="l199"><span class="ln">199  </span></a>                <span class="s1">player_classified_years[id].append(</span><span class="s4">1</span><span class="s1">)</span>
+<a name="l200"><span class="ln">200  </span></a>            <span class="s2">else</span><span class="s1">:</span>
+<a name="l201"><span class="ln">201  </span></a>                <span class="s1">player_allnba = player_awards.loc[(player_awards[</span><span class="s3">'all_star_game'</span><span class="s1">]==</span><span class="s2">True</span><span class="s1">)]</span>
+<a name="l202"><span class="ln">202  </span></a>                <span class="s2">if </span><span class="s1">player_allnba.size != </span><span class="s4">0</span><span class="s1">:</span>
+<a name="l203"><span class="ln">203  </span></a>                    <span class="s1">player_classified_years[id].append(</span><span class="s4">2</span><span class="s1">)</span>
+<a name="l204"><span class="ln">204  </span></a>                <span class="s2">else</span><span class="s1">:</span>
+<a name="l205"><span class="ln">205  </span></a>                    <span class="s1">player_starter = player_seasons.loc[(player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">2000</span><span class="s1">)|(player_data[</span><span class="s3">'games_start'</span><span class="s1">]&gt;=</span><span class="s4">41</span><span class="s1">)]</span>
+<a name="l206"><span class="ln">206  </span></a>                    <span class="s1">player_starter_2019_2020 = player_seasons.loc[(player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">1756</span><span class="s1">)|(player_data[</span><span class="s3">'games_start'</span><span class="s1">]&gt;=</span><span class="s4">36</span><span class="s1">)]</span>
+<a name="l207"><span class="ln">207  </span></a>                    <span class="s1">player_starter_2011 = player_seasons.loc[(player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">1610</span><span class="s1">)|(player_data[</span><span class="s3">'games_start'</span><span class="s1">]&gt;=</span><span class="s4">33</span><span class="s1">)]</span>
+<a name="l208"><span class="ln">208  </span></a>                    <span class="s2">if </span><span class="s1">player_starter.size != </span><span class="s4">0</span><span class="s1">:</span>
+<a name="l209"><span class="ln">209  </span></a>                        <span class="s1">player_classified_years[id].append(</span><span class="s4">3</span><span class="s1">)</span>
+<a name="l210"><span class="ln">210  </span></a>                    <span class="s2">elif </span><span class="s1">player_starter_2019_2020.size != </span><span class="s4">0 </span><span class="s2">and </span><span class="s1">(season==</span><span class="s4">2019 </span><span class="s2">or </span><span class="s1">season==</span><span class="s4">2020</span><span class="s1">):</span>
+<a name="l211"><span class="ln">211  </span></a>                        <span class="s1">player_classified_years[id].append(</span><span class="s4">3</span><span class="s1">)</span>
+<a name="l212"><span class="ln">212  </span></a>                    <span class="s2">elif </span><span class="s1">player_starter_2011.size != </span><span class="s4">0 </span><span class="s2">and </span><span class="s1">season==</span><span class="s4">2011</span><span class="s1">:</span>
+<a name="l213"><span class="ln">213  </span></a>                        <span class="s1">player_classified_years[id].append(</span><span class="s4">3</span><span class="s1">)</span>
+<a name="l214"><span class="ln">214  </span></a>                    <span class="s2">else</span><span class="s1">:</span>
+<a name="l215"><span class="ln">215  </span></a>                        <span class="s1">player_rotation = player_data.loc[player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">1000</span><span class="s1">]</span>
+<a name="l216"><span class="ln">216  </span></a>                        <span class="s1">player_rotation_2019_2020 = player_data.loc[player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">878</span><span class="s1">]</span>
+<a name="l217"><span class="ln">217  </span></a>                        <span class="s1">player_rotation_2011 = player_data.loc[player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">805</span><span class="s1">]</span>
+<a name="l218"><span class="ln">218  </span></a>                        <span class="s2">if </span><span class="s1">player_rotation.size != </span><span class="s4">0</span><span class="s1">:</span>
+<a name="l219"><span class="ln">219  </span></a>                            <span class="s1">player_classified_years[id].append(</span><span class="s4">4</span><span class="s1">)</span>
+<a name="l220"><span class="ln">220  </span></a>                        <span class="s2">elif </span><span class="s1">player_rotation_2019_2020.size != </span><span class="s4">0 </span><span class="s2">and </span><span class="s1">(season==</span><span class="s4">2019 </span><span class="s2">and </span><span class="s1">season==</span><span class="s4">2020</span><span class="s1">):</span>
+<a name="l221"><span class="ln">221  </span></a>                            <span class="s1">player_classified_years[id].append(</span><span class="s4">4</span><span class="s1">)</span>
+<a name="l222"><span class="ln">222  </span></a>                        <span class="s2">elif </span><span class="s1">player_rotation_2011 != </span><span class="s4">0 </span><span class="s2">and </span><span class="s1">season==</span><span class="s4">2011</span><span class="s1">:</span>
+<a name="l223"><span class="ln">223  </span></a>                             <span class="s1">player_classified_years[id].append(</span><span class="s4">4</span><span class="s1">)</span>
+<a name="l224"><span class="ln">224  </span></a>                        <span class="s2">else</span><span class="s1">:</span>
+<a name="l225"><span class="ln">225  </span></a>                            <span class="s1">player_roster = player_data.loc[player_data[</span><span class="s3">'mins'</span><span class="s1">]&gt;=</span><span class="s4">1</span><span class="s1">]</span>
+<a name="l226"><span class="ln">226  </span></a>                            <span class="s2">if </span><span class="s1">player_roster.size != </span><span class="s4">0</span><span class="s1">:</span>
+<a name="l227"><span class="ln">227  </span></a>                                <span class="s1">player_classified_years[id].append(</span><span class="s4">5</span><span class="s1">)</span>
+<a name="l228"><span class="ln">228  </span></a>                            <span class="s2">else</span><span class="s1">:</span>
+<a name="l229"><span class="ln">229  </span></a>                                <span class="s1">player_classified_years[id].append(</span><span class="s4">6</span><span class="s1">)</span>
+<a name="l230"><span class="ln">230  </span></a>
+<a name="l231"><span class="ln">231  </span></a><span class="s2">def </span><span class="s1">classify(player</span><span class="s2">, </span><span class="s1">dict_of_year</span><span class="s2">, </span><span class="s1">player_classified_years):</span>
+<a name="l232"><span class="ln">232  </span></a>    <span class="s1">x = player_classified_years[player]</span>
+<a name="l233"><span class="ln">233  </span></a>    <span class="s2">if </span><span class="s1">len(x) &lt; </span><span class="s4">6</span><span class="s1">:</span>
+<a name="l234"><span class="ln">234  </span></a>        <span class="s1">dict_of_year[player] = </span><span class="s4">6</span>
+<a name="l235"><span class="ln">235  </span></a>    <span class="s2">else</span><span class="s1">:</span>
+<a name="l236"><span class="ln">236  </span></a>        <span class="s1">min_sum = </span><span class="s4">10000</span>
+<a name="l237"><span class="ln">237  </span></a>        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">4</span><span class="s2">, </span><span class="s1">len(x)-</span><span class="s4">1</span><span class="s1">):</span>
+<a name="l238"><span class="ln">238  </span></a>            <span class="s1">current_sum = x[i] + x[i+</span><span class="s4">1</span><span class="s1">]</span>
+<a name="l239"><span class="ln">239  </span></a>            <span class="s1">min_sum = min(current_sum</span><span class="s2">, </span><span class="s1">min_sum)</span>
+<a name="l240"><span class="ln">240  </span></a>        <span class="s1">dict_of_year[player] = min_sum//</span><span class="s4">2</span>
+<a name="l241"><span class="ln">241  </span></a>
+<a name="l242"><span class="ln">242  </span></a><span class="s2">def </span><span class="s1">get_four_avg(player_classified_years</span><span class="s2">, </span><span class="s1">playerid):</span>
+<a name="l243"><span class="ln">243  </span></a>    <span class="s1">first_four_sum = </span><span class="s4">0</span>
+<a name="l244"><span class="ln">244  </span></a>    <span class="s1">x = player_classified_years[playerid]</span>
+<a name="l245"><span class="ln">245  </span></a>    <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">0</span><span class="s2">,</span><span class="s1">min(</span><span class="s4">4</span><span class="s2">, </span><span class="s1">len(x))):</span>
+<a name="l246"><span class="ln">246  </span></a>        <span class="s1">first_four_sum += x[i]</span>
+<a name="l247"><span class="ln">247  </span></a>    <span class="s2">return </span><span class="s1">first_four_sum/min(</span><span class="s4">4</span><span class="s2">, </span><span class="s1">len(x))</span>
+<a name="l248"><span class="ln">248  </span></a>
+<a name="l249"><span class="ln">249  </span></a><span class="s2">def </span><span class="s1">get_classify_avg(avg):</span>
+<a name="l250"><span class="ln">250  </span></a>    <span class="s2">if </span><span class="s1">avg&lt;=</span><span class="s4">1.49</span><span class="s1">:</span>
+<a name="l251"><span class="ln">251  </span></a>        <span class="s2">return </span><span class="s4">11</span>
+<a name="l252"><span class="ln">252  </span></a>    <span class="s2">elif </span><span class="s1">avg&lt;=</span><span class="s4">2</span><span class="s1">:</span>
+<a name="l253"><span class="ln">253  </span></a>        <span class="s2">return </span><span class="s4">22</span>
+<a name="l254"><span class="ln">254  </span></a>    <span class="s2">elif </span><span class="s1">avg&lt;=</span><span class="s4">2.49</span><span class="s1">:</span>
+<a name="l255"><span class="ln">255  </span></a>        <span class="s2">return </span><span class="s4">33</span>
+<a name="l256"><span class="ln">256  </span></a>    <span class="s2">elif </span><span class="s1">avg&lt;=</span><span class="s4">3</span><span class="s1">:</span>
+<a name="l257"><span class="ln">257  </span></a>        <span class="s2">return </span><span class="s4">44</span>
+<a name="l258"><span class="ln">258  </span></a>    <span class="s2">elif </span><span class="s1">avg&lt;=</span><span class="s4">3.49</span><span class="s1">:</span>
+<a name="l259"><span class="ln">259  </span></a>        <span class="s2">return </span><span class="s4">55</span>
+<a name="l260"><span class="ln">260  </span></a>    <span class="s2">else</span><span class="s1">:</span>
+<a name="l261"><span class="ln">261  </span></a>        <span class="s2">return </span><span class="s4">66</span>
+<a name="l262"><span class="ln">262  </span></a>
+<a name="l263"><span class="ln">263  </span></a>
+<a name="l264"><span class="ln">264  </span></a><span class="s2">def </span><span class="s1">get_career_outcomes(training_data</span><span class="s2">, </span><span class="s1">first_years_avg):</span>
+<a name="l265"><span class="ln">265  </span></a>    <span class="s1">classified_avg = get_classify_avg(first_years_avg)</span>
+<a name="l266"><span class="ln">266  </span></a>    <span class="s1">classified_avg_tuples = [data </span><span class="s2">for </span><span class="s1">data </span><span class="s2">in </span><span class="s1">training_data </span><span class="s2">if </span><span class="s1">data[</span><span class="s4">0</span><span class="s1">]==classified_avg]</span>
+<a name="l267"><span class="ln">267  </span></a>    <span class="s1">num_tuples = len(classified_avg_tuples)</span>
+<a name="l268"><span class="ln">268  </span></a>    <span class="s1">elite_probability = round(len([elite </span><span class="s2">for </span><span class="s1">elite </span><span class="s2">in </span><span class="s1">classified_avg_tuples </span><span class="s2">if </span><span class="s1">elite[</span><span class="s4">1</span><span class="s1">]==</span><span class="s4">1</span><span class="s1">])/num_tuples</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l269"><span class="ln">269  </span></a>    <span class="s1">allstar_probability = round(len([elite </span><span class="s2">for </span><span class="s1">elite </span><span class="s2">in </span><span class="s1">classified_avg_tuples </span><span class="s2">if </span><span class="s1">elite[</span><span class="s4">1</span><span class="s1">]==</span><span class="s4">2</span><span class="s1">])/num_tuples</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l270"><span class="ln">270  </span></a>    <span class="s1">starter_probability = round(len([elite </span><span class="s2">for </span><span class="s1">elite </span><span class="s2">in </span><span class="s1">classified_avg_tuples </span><span class="s2">if </span><span class="s1">elite[</span><span class="s4">1</span><span class="s1">]==</span><span class="s4">3</span><span class="s1">])/num_tuples</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l271"><span class="ln">271  </span></a>    <span class="s1">rotation_probability = round(len([elite </span><span class="s2">for </span><span class="s1">elite </span><span class="s2">in </span><span class="s1">classified_avg_tuples </span><span class="s2">if </span><span class="s1">elite[</span><span class="s4">1</span><span class="s1">]==</span><span class="s4">4</span><span class="s1">])/num_tuples</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l272"><span class="ln">272  </span></a>    <span class="s1">roster_probability = round(len([elite </span><span class="s2">for </span><span class="s1">elite </span><span class="s2">in </span><span class="s1">classified_avg_tuples </span><span class="s2">if </span><span class="s1">elite[</span><span class="s4">1</span><span class="s1">]==</span><span class="s4">5</span><span class="s1">])/num_tuples</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l273"><span class="ln">273  </span></a>    <span class="s1">outofleague_probability = round(len([elite </span><span class="s2">for </span><span class="s1">elite </span><span class="s2">in </span><span class="s1">classified_avg_tuples </span><span class="s2">if </span><span class="s1">elite[</span><span class="s4">1</span><span class="s1">]==</span><span class="s4">6</span><span class="s1">])/num_tuples</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+<a name="l274"><span class="ln">274  </span></a>    <span class="s2">return </span><span class="s1">[elite_probability</span><span class="s2">, </span><span class="s1">allstar_probability</span><span class="s2">, </span><span class="s1">starter_probability</span><span class="s2">, </span><span class="s1">rotation_probability</span><span class="s2">, </span><span class="s1">roster_probability</span><span class="s2">, </span><span class="s1">outofleague_probability]</span>
+<a name="l275"><span class="ln">275  </span></a>
+<a name="l276"><span class="ln">276  </span></a><span class="s0"># cleaning and producing data about 2010 players</span>
+<a name="l277"><span class="ln">277  </span></a><span class="s1">players_2010 = player_data.loc[player_data[</span><span class="s3">'draftyear'</span><span class="s1">]==</span><span class="s4">2010</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l278"><span class="ln">278  </span></a><span class="s1">classified_years_2010 = {}</span>
+<a name="l279"><span class="ln">279  </span></a><span class="s1">clean_data(players_2010</span><span class="s2">, </span><span class="s1">classified_years_2010)</span>
+<a name="l280"><span class="ln">280  </span></a><span class="s1">dict_of_2010  = {}</span>
+<a name="l281"><span class="ln">281  </span></a><span class="s2">for </span><span class="s1">player_id </span><span class="s2">in </span><span class="s1">players_2010:</span>
+<a name="l282"><span class="ln">282  </span></a>    <span class="s1">classify(player_id</span><span class="s2">, </span><span class="s1">dict_of_2010</span><span class="s2">, </span><span class="s1">classified_years_2010)</span>
+<a name="l283"><span class="ln">283  </span></a>    <span class="s0">#print(get_four_avg(classified_years, player_id))</span>
+<a name="l284"><span class="ln">284  </span></a>    <span class="s0">#print(classify_avg(get_four_avg(classified_years, player_id)))</span>
+<a name="l285"><span class="ln">285  </span></a><span class="s1">num_elite = len({player </span><span class="s2">for </span><span class="s1">player </span><span class="s2">in </span><span class="s1">dict_of_2010 </span><span class="s2">if </span><span class="s1">dict_of_2010[player]==</span><span class="s4">1</span><span class="s1">})</span>
+<a name="l286"><span class="ln">286  </span></a><span class="s1">num_allstar = len({player </span><span class="s2">for </span><span class="s1">player </span><span class="s2">in </span><span class="s1">dict_of_2010 </span><span class="s2">if </span><span class="s1">dict_of_2010[player]==</span><span class="s4">2</span><span class="s1">})</span>
+<a name="l287"><span class="ln">287  </span></a><span class="s1">num_starter = len({player </span><span class="s2">for </span><span class="s1">player </span><span class="s2">in </span><span class="s1">dict_of_2010 </span><span class="s2">if </span><span class="s1">dict_of_2010[player]==</span><span class="s4">3</span><span class="s1">})</span>
+<a name="l288"><span class="ln">288  </span></a><span class="s1">num_rotation = len({player </span><span class="s2">for </span><span class="s1">player </span><span class="s2">in </span><span class="s1">dict_of_2010 </span><span class="s2">if </span><span class="s1">dict_of_2010[player]==</span><span class="s4">4</span><span class="s1">})</span>
+<a name="l289"><span class="ln">289  </span></a><span class="s1">num_roster = len({player </span><span class="s2">for </span><span class="s1">player </span><span class="s2">in </span><span class="s1">dict_of_2010 </span><span class="s2">if </span><span class="s1">dict_of_2010[player]==</span><span class="s4">5</span><span class="s1">})</span>
+<a name="l290"><span class="ln">290  </span></a><span class="s1">num_out_of_league = len({player </span><span class="s2">for </span><span class="s1">player </span><span class="s2">in </span><span class="s1">dict_of_2010 </span><span class="s2">if </span><span class="s1">dict_of_2010[player]==</span><span class="s4">6</span><span class="s1">})</span>
+<a name="l291"><span class="ln">291  </span></a><span class="s1">print(</span><span class="s3">'Elite:'</span><span class="s2">, </span><span class="s1">num_elite</span><span class="s2">,</span><span class="s3">'players'</span><span class="s1">)</span>
+<a name="l292"><span class="ln">292  </span></a><span class="s1">print(</span><span class="s3">'All Star:'</span><span class="s2">,</span><span class="s1">num_allstar</span><span class="s2">,</span><span class="s3">'player'</span><span class="s1">)</span>
+<a name="l293"><span class="ln">293  </span></a><span class="s1">print(</span><span class="s3">'Starter:'</span><span class="s2">, </span><span class="s1">num_starter</span><span class="s2">,</span><span class="s3">'players'</span><span class="s1">)</span>
+<a name="l294"><span class="ln">294  </span></a><span class="s1">print(</span><span class="s3">'Rotation:'</span><span class="s2">, </span><span class="s1">num_rotation</span><span class="s2">,</span><span class="s3">'players'</span><span class="s1">)</span>
+<a name="l295"><span class="ln">295  </span></a><span class="s1">print(</span><span class="s3">'Roster:'</span><span class="s2">, </span><span class="s1">num_roster</span><span class="s2">,</span><span class="s3">'players'</span><span class="s1">)</span>
+<a name="l296"><span class="ln">296  </span></a><span class="s1">print(</span><span class="s3">'Out of League:'</span><span class="s2">, </span><span class="s1">num_out_of_league</span><span class="s2">,</span><span class="s3">'players'</span><span class="s1">)</span>
+<a name="l297"><span class="ln">297  </span></a>
+<a name="l298"><span class="ln">298  </span></a>
+<a name="l299"><span class="ln">299  </span></a>
+<a name="l300"><span class="ln">300  </span></a>
+<a name="l301"><span class="ln">301  </span></a>
+<a name="l302"><span class="ln">302  </span></a><span class="s0">#%% md 
+<a name="l303"><span class="ln">303  </span></a></span><span class="s1">Overview of how model works 
+<a name="l304"><span class="ln">304  </span></a> 
+<a name="l305"><span class="ln">305  </span></a>1. The data cleaning program classifies a player's performance each of their seasons and a player's performance for their career as a whole. It assigns each player a number based on their performance for each year. A 1 if they meet Elite qualifications in a given year, 2 if they meet All-Star qualifications in a given year, etc. The program also assigns a player a number based on their career outcome: a 6 if they had out-of-league career, 5 if they had a roster career, etc. 
+<a name="l306"><span class="ln">306  </span></a>2. The program compiles the average performance for the first few years and the overall career outcome of players drafter in 2015 or before 2015. First, it calculates the average performance of a player for their first four years or fewer years. For example, if a player outcomes of Roster(5), Rotation(4), Starter(3), and then All-Star(2) for the first four years, then their first four-year average would be 3.5. Then, the average is classified as 11 if &lt;=1.49, 22 if 1.5&lt;= avg &lt;1.99, etc. The program looks takes in the career outcome of that player: 1(Elite), 2(All-Star), etc. Finally, the classified average and career outcome are stored as a tuple and stored in the training data. 
+<a name="l307"><span class="ln">307  </span></a>3. When predicting the career performance of a player drafted after 2018, the program calculates the average performance of the first four or fewer years of that player. Then, the program classifies the average performance of the player. Lastly, based on the training data, it calcluates the probability of each career outcome given that their classified average performance is a certain value. 
+<a name="l308"><span class="ln">308  </span></a>4. The strengths of the model are that it is simple and straightforward. The model does not make a lot of unwarranted assumptions. Each prediction is based sound past data. 
+<a name="l309"><span class="ln">309  </span></a>5. The weaknesses of the model are that it doesn't consider rookie accolades and relies on the average of the first-four year performance. Generally, players in their first few years do not make the NBA All-Star game or the All-NBA teams because they are inexperienced compared to the average NBA player. For this reason, the rookie All-Star game and other accolades exist. If I had more time to work on the model I would change the model so it would account for things such as rookie accolades. For example, I would a assign 1 if the player made Elite status, 2 if All-Star status, 3 if rookie Elite status, 4 if rookie All-Star status, etc. The median is less susceptible to anamolies in data, so it is generally a better indicator of a typical value in a data set. For this reason, if I had more time I would change the model so that model considers the median performance of a player for their first years in the league. 
+<a name="l310"><span class="ln">310  </span></a></span><span class="s0">#%% md 
+<a name="l311"><span class="ln">311  </span></a></span><span class="s1">&lt;strong&gt;&lt;span style=&quot;color:red&quot;&gt;ANSWER 3:&lt;/span&gt;&lt;/strong&gt;   
+<a name="l312"><span class="ln">312  </span></a> 
+<a name="l313"><span class="ln">313  </span></a>Elite: X players.   
+<a name="l314"><span class="ln">314  </span></a>All-Star: X players.   
+<a name="l315"><span class="ln">315  </span></a>Starter: X players.   
+<a name="l316"><span class="ln">316  </span></a>Rotation: X players.   
+<a name="l317"><span class="ln">317  </span></a>Roster: X players.   
+<a name="l318"><span class="ln">318  </span></a>Out of League: X players.   
+<a name="l319"><span class="ln">319  </span></a></span><span class="s0">#%% md 
+<a name="l320"><span class="ln">320  </span></a></span><span class="s1">### Open Ended Modeling Question    
+<a name="l321"><span class="ln">321  </span></a> 
+<a name="l322"><span class="ln">322  </span></a>In this question, you will work to build a model to predict a player's career outcome based on information up through the first four years of his career.  
+<a name="l323"><span class="ln">323  </span></a> 
+<a name="l324"><span class="ln">324  </span></a>This question is intentionally left fairly open ended, but here are some notes and specifications.   
+<a name="l325"><span class="ln">325  </span></a> 
+<a name="l326"><span class="ln">326  </span></a>1. We know modeling questions can take a long time, and that qualified candidates will have different levels of experience with &quot;formal&quot; modeling. Don't be discouraged. It's not our intention to make you spend excessive time here. If you get your model to a good spot but think you could do better by spending a lot more time, you can just write a bit about your ideas for future improvement and leave it there. Further, we're more interested in your thought process and critical thinking than we are in specific modeling techniques. Using smart features is more important than using fancy mathematical machinery, and a successful candidate could use a simple regression approach.  
+<a name="l327"><span class="ln">327  </span></a> 
+<a name="l328"><span class="ln">328  </span></a>2. You may use any data provided in this project, but please do not bring in any external sources of data. Note that while most of the data provided goes back to 2007, All NBA and All Rookie team voting is only included back to 2011.   
+<a name="l329"><span class="ln">329  </span></a> 
+<a name="l330"><span class="ln">330  </span></a>3. A player needs to complete three additional seasons after their first four to be considered as having a distinct career outcome for our dataset. Because the dataset in this project ends in 2021, this means that a player would need to have had the chance to play in the '21, '20, and '19 seasons after his first four years, and thus his first four years would have been '18, '17, '16, and '15. **For this reason, limit your training data to players who were drafted in or before the 2015 season.** Karl-Anthony Towns was the #1 pick in that season.   
+<a name="l331"><span class="ln">331  </span></a> 
+<a name="l332"><span class="ln">332  </span></a>4. Once you build your model, predict on all players who were drafted in 2018-2021 (They have between 1 and 4 seasons of data available and have not yet started accumulating seasons that inform their career outcome).   
+<a name="l333"><span class="ln">333  </span></a> 
+<a name="l334"><span class="ln">334  </span></a>5. You can predict a single career outcome for each player, but it's better if you can predict the probability that each player falls into each outcome bucket.     
+<a name="l335"><span class="ln">335  </span></a> 
+<a name="l336"><span class="ln">336  </span></a>6. Include, as part of your answer:   
+<a name="l337"><span class="ln">337  </span></a>  - A brief written overview of how your model works, targeted towards a decision maker in the front office without a strong statistical background.  
+<a name="l338"><span class="ln">338  </span></a>  - What you view as the strengths and weaknesses of your model.   
+<a name="l339"><span class="ln">339  </span></a>  - How you'd address the weaknesses if you had more time and or more data.   
+<a name="l340"><span class="ln">340  </span></a>  - A matplotlib or plotly visualization highlighting some part of your modeling process, the model itself, or your results.   
+<a name="l341"><span class="ln">341  </span></a>  - Your predictions for Shai Gilgeous-Alexander, Zion Williamson, James Wiseman, and Josh Giddey.   
+<a name="l342"><span class="ln">342  </span></a>  - (Bonus!) An html table (for example, see the package `reactable`) containing all predictions for the players drafted in 2019-2021.   
+<a name="l343"><span class="ln">343  </span></a> 
+<a name="l344"><span class="ln">344  </span></a> 
+<a name="l345"><span class="ln">345  </span></a></span><span class="s0">#%% 
+<a name="l346"><span class="ln">346  </span></a># cleaning data and building and training model</span>
+<a name="l347"><span class="ln">347  </span></a><span class="s1">players_before_2015 = player_data.loc[player_data[</span><span class="s3">'draftyear'</span><span class="s1">]&lt;=</span><span class="s4">2015</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l348"><span class="ln">348  </span></a><span class="s1">classified_years_before_2015 = {}</span>
+<a name="l349"><span class="ln">349  </span></a><span class="s1">clean_data(players_before_2015</span><span class="s2">, </span><span class="s1">classified_years_before_2015)</span>
+<a name="l350"><span class="ln">350  </span></a><span class="s1">dict_before_2015  = {}</span>
+<a name="l351"><span class="ln">351  </span></a><span class="s1">training_info = []</span>
+<a name="l352"><span class="ln">352  </span></a><span class="s2">for </span><span class="s1">player_id </span><span class="s2">in </span><span class="s1">players_before_2015:</span>
+<a name="l353"><span class="ln">353  </span></a>    <span class="s1">classify(player_id</span><span class="s2">, </span><span class="s1">dict_before_2015</span><span class="s2">, </span><span class="s1">classified_years_before_2015)</span>
+<a name="l354"><span class="ln">354  </span></a>    <span class="s1">classified_four_year_avg = get_classify_avg(get_four_avg(classified_years_before_2015</span><span class="s2">, </span><span class="s1">player_id))</span>
+<a name="l355"><span class="ln">355  </span></a>    <span class="s1">four_year_avg = get_four_avg(classified_years_before_2015</span><span class="s2">, </span><span class="s1">player_id)</span>
+<a name="l356"><span class="ln">356  </span></a>    <span class="s1">career_outcome = dict_before_2015[player_id]</span>
+<a name="l357"><span class="ln">357  </span></a>    <span class="s1">current_row = [classified_four_year_avg</span><span class="s2">, </span><span class="s1">career_outcome]</span>
+<a name="l358"><span class="ln">358  </span></a>    <span class="s1">training_info.append(current_row)</span>
+<a name="l359"><span class="ln">359  </span></a><span class="s0">#print(training_data)'''</span>
+<a name="l360"><span class="ln">360  </span></a>
+<a name="l361"><span class="ln">361  </span></a><span class="s0"># calculating probabilities for 2018 and 2021 players</span>
+<a name="l362"><span class="ln">362  </span></a><span class="s1">young_players = player_data.loc[player_data[</span><span class="s3">'draftyear'</span><span class="s1">]&gt;=</span><span class="s4">2018</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l363"><span class="ln">363  </span></a><span class="s1">classified_years_young_players = {}</span>
+<a name="l364"><span class="ln">364  </span></a><span class="s1">clean_data(young_players</span><span class="s2">, </span><span class="s1">classified_years_young_players)</span>
+<a name="l365"><span class="ln">365  </span></a><span class="s0"># if you want to see the career outcome likelihoods for each player by id, print the part below</span>
+<a name="l366"><span class="ln">366  </span></a><span class="s3">'''print('Career Outcome Likelihoods') 
+<a name="l367"><span class="ln">367  </span></a>print('Elite | Allstar | Starter | Rotation | Roster | Out of League') 
+<a name="l368"><span class="ln">368  </span></a>for player_id in young_players: 
+<a name="l369"><span class="ln">369  </span></a>    print(player_id, get_career_outcomes(training_info, get_four_avg(classified_years_young_players, player_id)))'''</span>
+<a name="l370"><span class="ln">370  </span></a>
+<a name="l371"><span class="ln">371  </span></a><span class="s1">shai_id = player_data.loc[player_data[</span><span class="s3">'player'</span><span class="s1">]==</span><span class="s3">'Shai Gilgeous-Alexander'</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l372"><span class="ln">372  </span></a><span class="s1">james_id = player_data.loc[player_data[</span><span class="s3">'player'</span><span class="s1">]==</span><span class="s3">'James Wiseman'</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l373"><span class="ln">373  </span></a><span class="s1">zion_id = player_data.loc[player_data[</span><span class="s3">'player'</span><span class="s1">]==</span><span class="s3">'Zion Williamson'</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l374"><span class="ln">374  </span></a><span class="s1">josh_id = player_data.loc[player_data[</span><span class="s3">'player'</span><span class="s1">]==</span><span class="s3">'Josh Giddey'</span><span class="s2">, </span><span class="s3">'nbapersonid'</span><span class="s1">].unique()</span>
+<a name="l375"><span class="ln">375  </span></a>
+<a name="l376"><span class="ln">376  </span></a><span class="s1">young_player_ids = [shai_id[</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s1">james_id[</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s1">zion_id[</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s1">josh_id[</span><span class="s4">0</span><span class="s1">]]</span>
+<a name="l377"><span class="ln">377  </span></a><span class="s1">labels = [</span><span class="s3">'Elite' </span><span class="s2">, </span><span class="s3">'Allstar'</span><span class="s2">, </span><span class="s3">'Starter'</span><span class="s2">, </span><span class="s3">'Rotation' </span><span class="s2">, </span><span class="s3">'Roster' </span><span class="s2">, </span><span class="s3">'Out of League'</span><span class="s1">]</span>
+<a name="l378"><span class="ln">378  </span></a>
+<a name="l379"><span class="ln">379  </span></a><span class="s2">for </span><span class="s1">id </span><span class="s2">in </span><span class="s1">young_player_ids:</span>
+<a name="l380"><span class="ln">380  </span></a>    <span class="s1">values = get_career_outcomes(training_info</span><span class="s2">, </span><span class="s1">get_four_avg(classified_years_young_players</span><span class="s2">, </span><span class="s1">id))</span>
+<a name="l381"><span class="ln">381  </span></a>    <span class="s1">plt.pie(values</span><span class="s2">, </span><span class="s1">labels=labels</span><span class="s2">, </span><span class="s1">autopct=</span><span class="s3">'%1.1f%%'</span><span class="s1">)</span>
+<a name="l382"><span class="ln">382  </span></a>    <span class="s1">plt.title(</span><span class="s3">'Career Outcome Chances'</span><span class="s1">)</span>
+<a name="l383"><span class="ln">383  </span></a>    <span class="s1">plt.axis(</span><span class="s3">'equal'</span><span class="s1">)</span>
+<a name="l384"><span class="ln">384  </span></a>    <span class="s1">plt.show()</span>
+<a name="l385"><span class="ln">385  </span></a>
+<a name="l386"><span class="ln">386  </span></a><span class="s1">print(</span><span class="s3">'Career outcome piecharts for Shai Gilgeous-Alexander, James Wiseman, Zion Williamson, and Josh Giddey in same order'</span><span class="s1">)</span>
+<a name="l387"><span class="ln">387  </span></a><span class="s1">print(</span><span class="s3">'Shai Gilgeous-Alexander'</span><span class="s2">,</span><span class="s1">get_career_outcomes(training_info</span><span class="s2">, </span><span class="s1">get_four_avg(classified_years_young_players</span><span class="s2">, </span><span class="s1">shai_id[</span><span class="s4">0</span><span class="s1">])))</span>
+<a name="l388"><span class="ln">388  </span></a><span class="s1">print(</span><span class="s3">'James Wiseman'</span><span class="s2">,</span><span class="s1">get_career_outcomes(training_info</span><span class="s2">, </span><span class="s1">get_four_avg(classified_years_young_players</span><span class="s2">, </span><span class="s1">james_id[</span><span class="s4">0</span><span class="s1">])))</span>
+<a name="l389"><span class="ln">389  </span></a><span class="s1">print(</span><span class="s3">'Zion Williamson'</span><span class="s2">,</span><span class="s1">get_career_outcomes(training_info</span><span class="s2">, </span><span class="s1">get_four_avg(classified_years_young_players</span><span class="s2">, </span><span class="s1">zion_id[</span><span class="s4">0</span><span class="s1">])))</span>
+<a name="l390"><span class="ln">390  </span></a><span class="s1">print(</span><span class="s3">'Josh Giddey'</span><span class="s2">,</span><span class="s1">get_career_outcomes(training_info</span><span class="s2">, </span><span class="s1">get_four_avg(classified_years_young_players</span><span class="s2">, </span><span class="s1">josh_id[</span><span class="s4">0</span><span class="s1">])))</span>
+<a name="l391"><span class="ln">391  </span></a><span class="s0">#%% md 
+<a name="l392"><span class="ln">392  </span></a></span><span class="s1">## Part 2 -- Predicting Team Stats   
+<a name="l393"><span class="ln">393  </span></a> 
+<a name="l394"><span class="ln">394  </span></a>In this section, we're going to introduce a simple way to predict team offensive rebound percent in the next game and then discuss ways to improve those predictions.   
+<a name="l395"><span class="ln">395  </span></a>  
+<a name="l396"><span class="ln">396  </span></a>### Question 1    
+<a name="l397"><span class="ln">397  </span></a> 
+<a name="l398"><span class="ln">398  </span></a>Using the `rebounding_data` dataset, we'll predict a team's next game's offensive rebounding percent to be their average offensive rebounding percent in all prior games. On a single game level, offensive rebounding percent is the number of offensive rebounds divided by their number offensive rebound &quot;chances&quot; (essentially the team's missed shots). On a multi-game sample, it should be the total number of offensive rebounds divided by the total number of offensive rebound chances.     
+<a name="l399"><span class="ln">399  </span></a> 
+<a name="l400"><span class="ln">400  </span></a>Please calculate what OKC's predicted offensive rebound percent is for game 81 in the data. That is, use games 1-80 to predict game 81.   
+<a name="l401"><span class="ln">401  </span></a></span><span class="s0">#%% 
+<a name="l402"><span class="ln">402  </span></a></span><span class="s1">x= rebounding_data.loc[(rebounding_data[</span><span class="s3">'team'</span><span class="s1">]==</span><span class="s3">'OKC'</span><span class="s1">) &amp; (rebounding_data[</span><span class="s3">'game_number'</span><span class="s1">]&lt;</span><span class="s4">81</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s3">'offensive_rebounds'</span><span class="s2">, </span><span class="s3">'off_rebound_chances'</span><span class="s1">]].sum()</span>
+<a name="l403"><span class="ln">403  </span></a><span class="s1">predicted_percentage = (x.loc[</span><span class="s3">'offensive_rebounds'</span><span class="s1">]/x.loc[</span><span class="s3">'off_rebound_chances'</span><span class="s1">])*</span><span class="s4">100</span>
+<a name="l404"><span class="ln">404  </span></a><span class="s1">print(round(predicted_percentage</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">, </span><span class="s3">'%'</span><span class="s1">)</span>
+<a name="l405"><span class="ln">405  </span></a><span class="s0">#%% md 
+<a name="l406"><span class="ln">406  </span></a></span><span class="s1">&lt;strong&gt;&lt;span style=&quot;color:red&quot;&gt;ANSWER 1:&lt;/span&gt;&lt;/strong&gt;   
+<a name="l407"><span class="ln">407  </span></a> 
+<a name="l408"><span class="ln">408  </span></a>XX.X%  
+<a name="l409"><span class="ln">409  </span></a></span><span class="s0">#%% md 
+<a name="l410"><span class="ln">410  </span></a></span><span class="s1">### Question 2   
+<a name="l411"><span class="ln">411  </span></a> 
+<a name="l412"><span class="ln">412  </span></a>There are a few limitations to the method we used above. For example, if a team has a great offensive rebounder who has played in most games this season but will be out due to an injury for the next game, we might reasonably predict a lower team offensive rebound percent for the next game.   
+<a name="l413"><span class="ln">413  </span></a> 
+<a name="l414"><span class="ln">414  </span></a>Please discuss how you would think about changing our original model to better account for missing players. You do not have to write any code or implement any changes, and you can assume you have access to any reasonable data that isn't provided in this project. Try to be clear and concise with your answer.   
+<a name="l415"><span class="ln">415  </span></a></span><span class="s0">#%% md 
+<a name="l416"><span class="ln">416  </span></a></span><span class="s1">I would use team data for games that the great offensive rebounder did not play in. For example, if Shaq was our star offensive rebounder, I would find the average team offensive rebounding percentage for games that Shaq did not play in. Then, I would use that to predict the team offensive rebounding percentage for the upcoming game that Shaq would not be playing in. 
+<a name="l417"><span class="ln">417  </span></a></span><span class="s0">#%% md 
+<a name="l418"><span class="ln">418  </span></a></span><span class="s1">### Question 3   
+<a name="l419"><span class="ln">419  </span></a> 
+<a name="l420"><span class="ln">420  </span></a>In question 2, you saw and discussed how to deal with one weakness of the model. For this question, please write about 1-3 other potential weaknesses of the simple average model you made in question 1 and discuss how you would deal with each of them. You may either explain a weakness and discuss how you'd fix that weakness, then move onto the next issue, or you can start by explaining multiple weaknesses with the original approach and discuss one overall modeling methodology you'd use that gets around most or all of them. Again, you do not need to write any code or implement any changes, and you can assume you have access to any reasonable data that isn't provided in this project. Try to be clear and concise with your answer.   
+<a name="l421"><span class="ln">421  </span></a> 
+<a name="l422"><span class="ln">422  </span></a></span><span class="s0">#%% md 
+<a name="l423"><span class="ln">423  </span></a></span><span class="s1">1. The model uses the average to find the typical team offensive rebounding percentage. This is a weakness because the average is more often skewed by anamolies. A team could have an exceptionally great or horrible offensive rebounding percentage by fluke, but the average would still let that affect what a team's typical offensive rebounding percentage looks like. It would be more effective to use the median, since it isn't affected by anamolies. To implement this, I would write code add a team's offensive rebounding percentage of each game into an array. I would sort the array and find the middle value(offensive rebounding percentage). Then, I would use that percentage to predict the team's offensive rebounding percentage. 
+<a name="l424"><span class="ln">424  </span></a>2. Another weakness of the model is that it does not take into effect the skill-level of the opposing team. If a team played the worst defensive rebounding team in the NBA, they would be likely to have a good offensive rebounding night. If that same team played the best defensive rebounding team in the NBA, they would be unlikely to have a good rebounding night. However, the model does not take this into account. To fix this issue, I would create a new array which would be a copy of the array I discussed earlier plus the oppposing team's allowed offensive rebounding percentages. If the Thunder were playing the Sixers, I would add to the Thunder's offensive rebounding percentages array, the offensive rebounding percentages of the teams that played the Sixers that season. After that, I would sort the array and find the median of those percentages. I would use that median to predict the expected offensive rebounding percentage of the Thunder against the Sixers. 
+<a name="l425"><span class="ln">425  </span></a>3. The third weakness of the model is that it does not take into account home court advantage. Generally, teams play better when they are at their home court as opposed to when they are not. The current average model did not take that into account. To fix this weakness, I would use the array I described in # 2. To that array, I would add the team's offensive rebounding percentages when at home and the opposing team's allowed offensive rebounding percentages when away if the team was playing at home. I would then sort the array and find the median, or the middle. I would use that value to predict the team's offensive rebounding percentage. 
+<a name="l426"><span class="ln">426  </span></a>4. There would be overlap when the data points are added when calculating the median, but that's useful. For example, the Thunder's Offensive Rebounding Percentage at home data points would overlap with the Thunder's Offensive Rebounding Percentage overall data points. This would mean that the Thunder's home game offensive game rebounding percentages would appear twice(once from the Thunder's overall Offensive Rebounding Percentages and once from the Thunder's home Offensive Rebounding Percentages). The overlap could actually be beneficial as it gives more weight to games that are more similar to the upcoming game. If the Thunder were about to play at home, it would make sense to have the their home games have double the weight in influencing the prediction compared to their away games.</span></pre>
+</body>
+</html>
